@@ -5,6 +5,13 @@ class SkillsController < ApplicationController
     redirect_to character_path(@character)
   end
 
+  def destroy
+    @skill = Skill.find(params[:id])
+    @skill.destroy
+
+    redirect_to character_path(params[:character_id])
+  end
+
   private
 
   def skill_params
