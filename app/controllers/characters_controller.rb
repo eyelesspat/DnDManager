@@ -48,6 +48,7 @@ class CharactersController < ApplicationController
   private
 
   def character_params
-    params.require(:character).permit(:name, :description, :image)
+    params.require(:character).permit(:name, :description, :image, :current_hitpoints,
+                                      :total_hitpoints, :current_resource, :total_resource)
   end
 end
