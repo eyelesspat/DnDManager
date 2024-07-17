@@ -5,7 +5,9 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find(params[:id])
-    @skills = @character.skills.order(:casting_time)
+    @action_skills = @character.skills.where(casting_time: 'action')
+    @bonus_action_skills = @character.skills.where(casting_time: 'bonus action')
+    @reaction_skills = @character.skills.where(casting_time: 'reaction')
   end
 
   def new

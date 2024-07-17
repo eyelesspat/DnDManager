@@ -11,7 +11,62 @@
 </ul>
 
 <h2>Skills</h2>
-<%= render sorted_skills(@character) %>
 
-<h2>Add a skill:</h2>
-<%= render 'skills/form' %>
+<div class="skills-container">
+  <div class="skills-column">
+    <h3>Action</h3>
+    <%= render partial: 'skills/skill', collection: @action_skills, as: :skill, locals: { character: @character } %>
+  </div>
+
+  <div class="skills-column">
+    <h3>Bonus Action</h3>
+    <%= render partial: 'skills/skill', collection: @bonus_action_skills, as: :skill, locals: { character: @character } %>
+  </div>
+
+  <div class="skills-column">
+    <h3>Reaction</h3>
+    <%= render partial: 'skills/skill', collection: @reaction_skills, as: :skill, locals: { character: @character } %>
+  </div>
+</div>
+
+<h2><%= link_to 'Add a skill', new_character_skill_path(@character) %></h2>
+
+<style>
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills-column {
+  width: 30%;
+}
+
+.skill {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.delete-skill-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-skill-button:hover {
+  background-color: darkred;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+</style>

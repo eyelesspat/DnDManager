@@ -1,3 +1,4 @@
+<div class="skill">
   <p>
     <strong>Name:</strong>
     <%= skill.name %>
@@ -6,12 +7,13 @@
     <strong>Cast Time:</strong>
     <%= skill.casting_time %>
   </p>
-    <p>
+  <p>
     <strong>Range:</strong>
     <%= skill.range %>
   </p>
-    <p>
+  <p>
     <strong>Duration:</strong>
     <%= skill.duration %>
   </p>
 <%= button_to "Delete", character_skill_path(character_id: @character.id, id: skill.id), method: :delete %>
+</div>

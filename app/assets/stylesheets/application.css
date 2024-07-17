@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+ /* app/assets/stylesheets/application.css */
+
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .skills-column {
+    width: 30%;
+  }
+  
+  .skill {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .skill .delete-skill {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  

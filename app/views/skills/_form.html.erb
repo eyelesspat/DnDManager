@@ -5,7 +5,7 @@
   </p>
   <p>
     <%= form.label :casting_time %><br>
-    <%= form.text_area :casting_time %>
+    <%= form.select :casting_time, options_for_select([['Action', 'action'], ['Bonus Action', 'bonus action'], ['Reaction', 'reaction']]) %>
   </p>
     <p>
     <%= form.label :range %><br>
