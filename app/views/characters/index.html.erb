@@ -3,8 +3,12 @@
 <ul>
   <% @characters.each do |character| %>
     <li>
-    <a href="<%= character_path(character) %>">
-      <%= link_to character.name, character %>
+      <% if character.image.attached? %>
+        <%= link_to character_path(character) do %>
+          <%= image_tag character.image, width: 200, height: 200 %>
+        <% end %>
+      <% end %>
+      <br><%= link_to character.name, character %>
     </li>
   <% end %>
 </ul>
