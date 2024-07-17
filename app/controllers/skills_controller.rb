@@ -5,11 +5,35 @@ class SkillsController < ApplicationController
     @skill = @character.skills.build
   end
 
+  def show
+    @skill = Skill.find_by(id: params[:id])
+    return unless @skill.nil?
+
+    redirect_to root_path, alert: 'Skill not found'
+  end
+
+  def edit
+    @skill = Skill.find(params[:id])
+  end
+
   def create
     @skill = @character.skills.build(skill_params)
-    return unless @skill.save
 
-    redirect_to @character, notice: 'Skill was successfully created.' # Redirect to show page of @character # Render the new template again if there are errors
+    if @skill.save
+      redirect_to @character, notice: 'Skill was successfully created.'
+    else
+      render :new
+    end
+  end
+
+  def update
+    @skill = Skill.find(params[:id])
+
+    if @skill.update(skill_params)
+      redirect_to character_skill_path(@character, @skill), notice: 'Skill was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy

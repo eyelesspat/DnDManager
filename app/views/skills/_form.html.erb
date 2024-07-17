@@ -1,25 +1,42 @@
-<%= form_with model: [ @character, @character.skills.build ] do |form| %>
-  <p>
+<%= form_with(model: [@character, skill], local: true) do |form| %>
+  <% if skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(skill.errors.count, "error") %> prohibited this skill from being saved:</h2>
+
+      <ul>
+        <% skill.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
+    <%= form.text_field :name, value: @skill.name %>
+  </div>
+
+  <div>
     <%= form.label :casting_time %><br>
-    <%= form.select :casting_time, options_for_select([['Action', 'action'], ['Bonus Action', 'bonus action'], ['Reaction', 'reaction']]) %>
-  </p>
-    <p>
+    <%= form.select :casting_time, options_for_select([['Action', 'action'], ['Bonus Action', 'bonus action'], ['Reaction', 'reaction']]), value: @skill.casting_time %>
+  </div>
+
+  <div>
     <%= form.label :range %><br>
-    <%= form.text_field :range %> ft
-  </p>
-  <p>
+    <%= form.text_field :range, value: @skill.range %>
+  </div>
+
+  <div>
     <%= form.label :duration %><br>
-    <%= form.text_field :duration %>
-  </p>
-    <p>
+    <%= form.text_field :duration, value: @skill.duration %>
+  </div>
+
+  <div>
     <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </p>
-  <p>
+    <%= form.text_area :description, value: @skill.description %>
+  </div>
+
+  <div>
     <%= form.submit %>
-  </p>
+  </div>
 <% end %>
