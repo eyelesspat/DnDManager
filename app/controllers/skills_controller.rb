@@ -26,6 +26,6 @@ class SkillsController < ApplicationController
   end
 
   def skill_params
-    params.require(:skill).permit(:name, :casting_time, :range, :duration)
+    params.require(:skill).permit(:name, :casting_time, :range, :duration, :description)
   end
 end

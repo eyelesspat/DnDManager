@@ -14,6 +14,9 @@
   <p>
     <strong>Duration:</strong>
     <%= skill.duration %>
+  <p>
+    <strong>Description:</strong>
+    <%= skill.description %>
   </p>
 <%= button_to "Delete", character_skill_path(character_id: @character.id, id: skill.id), method: :delete %>
 </div>
