@@ -1,16 +1,35 @@
 <h1>Characters</h1>
 
-<ul>
+  <div class="con">
   <% @characters.each do |character| %>
-    <li>
+    <div class="box">
+      <div class='center-link'>
       <% if character.image.attached? %>
         <%= link_to character_path(character) do %>
           <%= image_tag character.image, width: 200, height: 200 %>
         <% end %>
       <% end %>
       <br><%= link_to character.name, character %>
-    </li>
+      </div>
+    </div>
   <% end %>
-</ul>
-
+  </div>
 <%= link_to "New Character", new_character_path, class: 'button-link', role: 'button' %>
+
+<style>
+.con {
+  display: flex;
+  flex-wrap: wrap; /* Allows the boxes to wrap to the next line if they overflow */
+  gap: 10px; /* Adjust the gap between boxes */
+  margin:10px;
+
+}
+.box {
+  text-decoration:none;
+  width:15%;
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+.center-link {
+  text-align: center;  /* Center the text inside the link */
+}
+</style>
