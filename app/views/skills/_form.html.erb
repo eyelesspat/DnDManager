@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="skill">
   <div>
     <%= form.label :name %><br>
     <%= form.text_field :name, value: @skill.name %>
@@ -39,4 +39,6 @@
   <div>
     <%= form.submit "Create", class: 'button-link' %>
   </div>
+</div>
+
 <% end %>

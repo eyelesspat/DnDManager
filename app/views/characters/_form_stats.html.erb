@@ -1,5 +1,6 @@
 <%= form_with model: @character do |form| %>
-    <div>
+  <div class="skill">
+  <div>
     <%= form.label :current_hitpoints %><br>
     <%= form.text_field :current_hitpoints %>
   </div>
@@ -10,5 +11,6 @@
 
   <div>
     <%= form.submit "Update", class: 'button-link'%>
+  </div>
   </div>
 <% end %>

@@ -15,6 +15,17 @@
  */
 
  /* app/assets/stylesheets/application.css */
+ body {
+    background-color: #252526 !important; /* This sets the background color to grey */
+    font-family: Arial, sans-serif !important; /* Optional: Sets a default font for the application */
+    color:white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+ }
+
+ div {
+    margin:10px; /* This sets the background color to grey */
+ }
 
 .skills-container {
     display: flex;
@@ -27,6 +38,8 @@
 
 .skill {
     border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #291749;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -43,8 +56,8 @@
     margin: 10px;
     font-size: 16px;
     color: white;
-    background-color: #007bff;
-    border: none;
+    background-color: #4c2b85;
+    border: solid 1px;
     border-radius: 4px;
     text-decoration: none;
     text-align: center;
@@ -62,3 +75,36 @@
 .button-delete:hover {
     background-color: darkred;
 }
+
+.con {
+    display: flex;
+    flex-wrap: wrap; /* Allows the boxes to wrap to the next line if they overflow */
+    gap: 10px; /* Adjust the gap between boxes   justify-content: space-between;*/
+    margin:10px;
+  
+  }
+  .box {
+    text-decoration:none;
+    width:15%;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+  }
+  .center-link {
+    text-align: center;  /* Center the text inside the link */
+  }
+
+  .main-info {
+    display:flex;
+  }
+  .main-info h2 {
+    margin-right: 8px;
+  }
+  
+  .skills-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .skills-column {
+    width: 32%;
+    margin: 8px;
+  }

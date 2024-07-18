@@ -1,10 +1,11 @@
 <h1><%= @skill.name %></h1>
+<div class="skill">
 
 <p><strong>Cast Time:</strong> <%= @skill.casting_time %></p>
 <p><strong>Range:</strong> <%= @skill.range %></p>
 <p><strong>Duration:</strong> <%= @skill.duration %></p>
 <p><strong>Description:</strong> <%= @skill.description %></p>
-
+</div>
 <%= button_to "Delete", character_skill_path(character_id: @character.id, id: @skill.id), method: :delete, class: 'button-link button-delete', role: 'button' %>
 
 <%= link_to 'Edit', edit_character_skill_path(@character, @skill), class: 'button-link', role: 'button' %>
