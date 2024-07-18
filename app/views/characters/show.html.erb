@@ -1,15 +1,23 @@
-<h1><%= @character.name %></h1>
-
-<p><%= @character.description %></p>
-
-<div class="main-info">
-<h2>Hitpoints
-<%= @character.current_hitpoints %>/<%= @character.total_hitpoints %>
-</h2>
-<h2>Resource
-<%= @character.current_resource %>/<%= @character.total_resource %>
-</h2>
-<%= link_to "Edit Stats", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
+<div class="box-container">
+  <div class="box-left">
+    <div class="box-left-inner-l">
+    <h1><%= @character.name %></h1>
+    <p><%= @character.description %></p>
+    
+    <div class="main-info">
+      <h2>Hitpoints <%= @character.current_hitpoints %>/<%= @character.total_hitpoints %></h2>
+      <h2>Resource <%= @character.current_resource %>/<%= @character.total_resource %></h2>
+    </div>
+    </div>
+    <div class="box-left-inner-r">
+    <%= image_tag @character.image, width: 200, height: 200 %>
+    </div>
+  </div>
+  
+  <div class="box-right">
+    <%= link_to "Edit Stats", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
+    <%= link_to "See inventory", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
+  </div>
 </div>
 <%#= link_to "Edit stats", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
 <%= link_to "Edit", edit_character_path(@character), class: 'button-link', role: 'button' %>
@@ -17,7 +25,7 @@
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   }, class: 'button-link', role: 'button' %>
-<h2>Skills</h2>
+<div><h1>Skills</h1></div>
 
 <div class="skills-container">
   <div class="skills-column">

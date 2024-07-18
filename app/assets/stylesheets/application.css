@@ -26,6 +26,10 @@
  div {
     margin:10px; /* This sets the background color to grey */
  }
+ 
+ h3 {
+  text-align: center;
+ }
 
 .skills-container {
     display: flex;
@@ -94,6 +98,7 @@
 
   .main-info {
     display:flex;
+    margin:0px;
   }
   .main-info h2 {
     margin-right: 8px;
@@ -107,4 +112,39 @@
   .skills-column {
     width: 32%;
     margin: 8px;
+  }
+
+  .box-container {
+    display: flex;
+    margin:0px;
+  }
+  
+  .box-left, .box-right {
+    flex: 1; /* Each div takes up equal space */
+    padding: 20px; /* Optional: Add padding for spacing */
+  }
+  
+  .box-left {
+    margin:0px;
+    padding: 0px;
+    display: flex; /* Nested flex container for box-left */
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+
+  .box-left h1 {
+    margin:0px
+  }
+  
+  .box-right {
+    text-align: center;
+    margin:0px
+
+  }
+
+
+  .box-right .button-link {
+    width: 90%;
+    align-self: center;
   }
