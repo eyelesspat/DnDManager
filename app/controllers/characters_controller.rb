@@ -28,6 +28,10 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
   end
 
+  def edit_stats
+    @character = Character.find(params[:id])
+  end
+
   def update
     @character = Character.find(params[:id])
 
@@ -35,6 +39,14 @@ class CharactersController < ApplicationController
       redirect_to @character
     else
       render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def update_stats
+    if @character.update(character_stats_params)
+      redirect_to @character, notice: 'Character stats were successfully updated.'
+    else
+      render :edit_stats, status: :unprocessable_entity
     end
   end
 
@@ -50,5 +62,9 @@ class CharactersController < ApplicationController
   def character_params
     params.require(:character).permit(:name, :description, :image, :current_hitpoints,
                                       :total_hitpoints, :current_resource, :total_resource)
+  end
+
+  def character_stats_params
+    params.require(:character).permit(:current_hitpoints, :total_hitpoints, :current_resource, :total_resource)
   end
 end

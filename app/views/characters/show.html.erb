@@ -9,15 +9,14 @@
 <h2>Resource
 <%= @character.current_resource %>/<%= @character.total_resource %>
 </h2>
+<%= link_to "Edit Stats", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
 </div>
-
-<ul>
-  <li><%= link_to "Edit", edit_character_path(@character) %></li>
-  <li><%= link_to "Destroy", character_path(@character), data: {
+<%#= link_to "Edit stats", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
+<%= link_to "Edit", edit_character_path(@character), class: 'button-link', role: 'button' %>
+<%= link_to "Destroy", character_path(@character), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
+                  }, class: 'button-link', role: 'button' %>
 <h2>Skills</h2>
 
 <div class="skills-container">
@@ -37,19 +36,14 @@
   </div>
 </div>
 
-<h2><%= link_to 'Add a skill', new_character_skill_path(@character) %></h2>
+<%= link_to 'Add a skill', new_character_skill_path(@character), class: 'button-link', role: 'button' %>
 
 <style>
 .main-info {
   display:flex;
-  margin: 8px
 }
 .main-info h2 {
-  margin: 16px
-}
-
-ul {
-    list-style-type: none;
+  margin-right: 8px;
 }
 
 .skills-container {
@@ -58,6 +52,7 @@ ul {
 }
 
 .skills-column {
-  width: 30%;
+  width: 32%;
+  margin: 8px;
 }
 </style>

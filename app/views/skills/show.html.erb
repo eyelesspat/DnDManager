@@ -5,7 +5,7 @@
 <p><strong>Duration:</strong> <%= @skill.duration %></p>
 <p><strong>Description:</strong> <%= @skill.description %></p>
 
-<%= button_to "Delete", character_skill_path(character_id: @character.id, id: @skill.id), method: :delete %>
+<%= button_to "Delete", character_skill_path(character_id: @character.id, id: @skill.id), method: :delete, class: 'button-link button-delete', role: 'button' %>
 
-<%= link_to 'Edit', edit_character_skill_path(@character, @skill) %>
-<%= link_to 'Back', character_path(@character) %>
+<%= link_to 'Edit', edit_character_skill_path(@character, @skill), class: 'button-link', role: 'button' %>
+<%= link_to 'Back', character_path(@character), class: 'button-link', role: 'button' %>

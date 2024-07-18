@@ -1,0 +1,14 @@
+<%= form_with model: @character do |form| %>
+    <div>
+    <%= form.label :current_hitpoints %><br>
+    <%= form.text_field :current_hitpoints %>
+  </div>
+  <div>
+    <%= form.label :current_resource %><br>
+    <%= form.text_field :current_resource %>
+  </div>
+
+  <div>
+    <%= form.submit "Update", class: 'button-link'%>
+  </div>
+<% end %>
