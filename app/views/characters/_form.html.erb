@@ -1,37 +1,46 @@
 <%= form_with model: @character do |form| %>
   <div class="skill">
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+  
+    <div><%= form.label :name %></div>
+    <div><%= form.text_field :name %>
     <% @character.errors.full_messages_for(:name).each do |message| %>
-    <div><%= message %></div>
+    <div class="error-message"><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
+    <div><%= form.label :description %></div>
+    <div><%= form.text_area :description %>
+    <% @character.errors.full_messages_for(:description).each do |message| %>
+    <div class="error-message"><%= message %></div>
+    <% end %>
   </div>
-    <div>
-    <%= form.label :current_hitpoints %><br>
-    <%= form.text_field :current_hitpoints %>
+    
+    <div><%= form.label :current_hitpoints %></div>
+    <div><%= form.text_field :current_hitpoints %>
   </div>
-  <div>
-    <%= form.label :total_hitpoints %><br>
-    <%= form.text_field :total_hitpoints %>
+  
+    <div><%= form.label :total_hitpoints %></div>
+    <div><%= form.text_field :total_hitpoints %>
+    <% @character.errors.full_messages_for(:total_hitpoints).each do |message| %>
+    <div class="error-message"><%= message %></div>
+    <% end %>
   </div>
-  <div>
-    <%= form.label :current_resource %><br>
-    <%= form.text_field :current_resource %>
+    <div><%= form.label :current_resource %></div>
+    <div><%= form.text_field :current_resource %>
   </div>
-  <div>
-    <%= form.label :total_resource %><br>
-    <%= form.text_field :total_resource %>
+  
+    <div><%= form.label :total_resource %></div>
+    <div><%= form.text_field :total_resource %>
+        <% @character.errors.full_messages_for(:total_resource).each do |message| %>
+    <div class="error-message"><%= message %></div>
+    <% end %>
   </div>
 
-  <div>
-    <%= form.label :image %><br>
-    <%= form.file_field :image %>
+    <div><%= form.label :image %></div>
+    <div><%= form.file_field :image %>
+    <% @character.errors.full_messages_for(:image).each do |message| %>
+    <div class="error-message"><%= message %></div>
+    <% end %>
   </div>
 
   <div>

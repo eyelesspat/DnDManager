@@ -23,13 +23,16 @@
     padding: 0 !important;
  }
 
- div {
-    margin:10px; /* This sets the background color to grey */
- }
  
  h2 {
   text-align: center;
  }
+
+ ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; /* Optional: Remove bullet points if needed */
+}
 
 .skills-container {
     display: flex;
@@ -147,4 +150,10 @@
   .box-right .button-link {
     width: 90%;
     align-self: center;
+  }
+
+  .error-message {
+    color: red;
+    width: 200px; /* Adjust width to prevent layout shift */
+    white-space: nowrap; /* Prevent text from wrapping */
   }

@@ -1,14 +1,19 @@
-    <%= form_with(model: [@character, item], local: true) do |form| %>
-
-    <div class="skill">
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+<%= form_with(model: [@character, @item], local: true) do |form| %>
+  <div class="skill">
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+      <% @item.errors.full_messages_for(:name).each do |message| %>
+        <div class="error-message"><%= message %></div>
+      <% end %>
     </div>
 
     <div>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
+      <%= form.label :description %><br>
+      <%= form.text_area :description %>
+      <% @item.errors.full_messages_for(:description).each do |message| %>
+        <div class="error-message"><%= message %></div>
+      <% end %>
     </div>
 
     <%= form.submit class: 'button-link' %>
