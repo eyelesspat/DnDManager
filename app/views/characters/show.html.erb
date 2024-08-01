@@ -5,8 +5,8 @@
     <p><%= @character.description %></p>
     
     <div class="main-info">
-      <h2>Hitpoints <%= @character.current_hitpoints %>/<%= @character.total_hitpoints %></h2>
-      <h2>Resource <%= @character.current_resource %>/<%= @character.total_resource %></h2>
+      <p>Hitpoints <%= @character.current_hitpoints %>/<%= @character.total_hitpoints %></p>
+      <p>Resource <%= @character.current_resource %>/<%= @character.total_resource %></p>
     </div>
     </div>
     <div class="box-left-inner-r">
@@ -16,7 +16,7 @@
   
   <div class="box-right">
     <%= link_to "Edit Stats", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
-    <%= link_to "See inventory", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
+    <%= link_to "See inventory", items_character_path(@character), class: 'button-link', role: 'button' %>
   </div>
 </div>
 <%#= link_to "Edit stats", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
@@ -29,17 +29,17 @@
 
 <div class="skills-container">
   <div class="skills-column">
-    <h3>Action</h3>
+    <h2>Action</h2>
     <%= render partial: 'skills/skill', collection: @action_skills, as: :skill, locals: { character: @character } %>
   </div>
 
   <div class="skills-column">
-    <h3>Bonus Action</h3>
+    <h2>Bonus Action</h2>
     <%= render partial: 'skills/skill', collection: @bonus_action_skills, as: :skill, locals: { character: @character } %>
   </div>
 
   <div class="skills-column">
-    <h3>Reaction</h3>
+    <h2>Reaction</h2>
     <%= render partial: 'skills/skill', collection: @reaction_skills, as: :skill, locals: { character: @character } %>
   </div>
 </div>

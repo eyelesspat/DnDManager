@@ -8,9 +8,12 @@
     <%= skill.casting_time %>
   </p>
   <p>
-    <strong>Range:</strong>
-    <%= skill.range %> ft
-  </p>
+<strong>Range:</strong>
+<% if skill.range =~ /\A\d+\z/ %>
+  <%= "#{skill.range} ft" %>
+<% else %>
+  <%= skill.range %>
+<% end %>
   <p>
     <strong>Duration:</strong>
     <%= skill.duration %>

@@ -1,0 +1,19 @@
+<h2>Items</h2>
+<% @character.items.each do |item| %>
+    <div class="skill">
+  <div>
+    <strong>Name:</strong>
+    <%= link_to item.name, character_item_path(character_id: @character.id, id: item.id) %>
+  </div>
+
+  <div>
+    <strong>Description:</strong>
+    <%= item.description %>
+  </div>
+  </div>
+
+<% end %>
+
+<%= link_to 'Add item', new_character_item_path(@character), class: 'button-link', role: 'button' %>
+<%= link_to 'Back', character_path(@character), class: 'button-link', role: 'button' %>
+

@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   resources :characters do
     resources :skills
+    resources :items
     member do
+      get 'items'
       get 'edit_stats'
       patch 'update_stats'
     end

@@ -8,6 +8,7 @@ class CharactersController < ApplicationController
     @action_skills = @character.skills.where(casting_time: 'action')
     @bonus_action_skills = @character.skills.where(casting_time: 'bonus action')
     @reaction_skills = @character.skills.where(casting_time: 'reaction')
+    @items = @character.items
   end
 
   def new
@@ -55,6 +56,10 @@ class CharactersController < ApplicationController
     @character.destroy
 
     redirect_to root_path, status: :see_other
+  end
+
+  def items
+    @character = Character.find(params[:id])
   end
 
   private

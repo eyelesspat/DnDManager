@@ -1,0 +1,18 @@
+    <%= form_with(model: [@character, item], local: true) do |form| %>
+
+    <div class="skill">
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    </div>
+
+    <div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+    </div>
+
+    <%= form.submit "Update", class: 'button-link' %>
+  </div>
+<% end %>
+
+<%= link_to "Back", items_character_path(@character), class: 'button-link', role: 'button' %>

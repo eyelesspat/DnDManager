@@ -1,0 +1,10 @@
+<h1><%= @item.name %></h1>
+<div class="skill">
+
+<p><strong>Name:</strong> <%= @item.name %></p>
+<p><strong>Description:</strong> <%= @item.description %></p>
+</div>
+<%= button_to "Delete", character_item_path(character_id: @character.id, id: @item.id), method: :delete, class: 'button-link button-delete', role: 'button' %>
+
+<%= link_to 'Edit', edit_character_item_path(@character, @item), class: 'button-link', role: 'button' %>
+<%= link_to 'Back', items_character_path(@character), class: 'button-link', role: 'button' %>
