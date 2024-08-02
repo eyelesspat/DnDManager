@@ -15,16 +15,19 @@
   </div>
   
   <div class="box-right">
-    <%= link_to "Edit Stats", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
+    <% if current_user && current_user.id == @character.user_id %>
+      <%= link_to "Edit Stats", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
+    <% end %>
     <%= link_to "See inventory", items_character_path(@character), class: 'button-link', role: 'button' %>
   </div>
 </div>
-<%#= link_to "Edit stats", edit_stats_character_path(@character), class: 'button-link', role: 'button' %>
+<% if current_user && current_user.id == @character.user_id %>
 <%= link_to "Edit", edit_character_path(@character), class: 'button-link', role: 'button' %>
 <%= link_to "Destroy", character_path(@character), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   }, class: 'button-link', role: 'button' %>
+<% end %>
 <div><h1>Skills</h1></div>
 
 <div class="skills-container">
@@ -44,4 +47,7 @@
   </div>
 </div>
 
-<%= link_to 'Add a skill', new_character_skill_path(@character), class: 'button-link', role: 'button' %>
+<% if current_user && current_user.id == @character.user_id %>
+  <%= link_to 'Add a skill', new_character_skill_path(@character), class: 'button-link', role: 'button' %>
+<% end %>
+

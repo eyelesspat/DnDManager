@@ -1,4 +1,6 @@
 class CharactersController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @characters = Character.all
   end
@@ -66,7 +68,7 @@ class CharactersController < ApplicationController
 
   def character_params
     params.require(:character).permit(:name, :description, :image, :current_hitpoints,
-                                      :total_hitpoints, :current_resource, :total_resource)
+                                      :total_hitpoints, :current_resource, :total_resource, :user_id)
   end
 
   def character_stats_params
