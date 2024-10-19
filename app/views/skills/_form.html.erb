@@ -27,6 +27,16 @@
   </div>
 
   <div>
+    <%= form.label :target %><br>
+    <%= form.text_field :target, value: @skill.target %>
+  </div>
+
+  <div>
+    <%= form.label :components %><br>
+    <%= form.text_field :components, value: @skill.components %>
+  </div>
+
+  <div>
     <%= form.label :duration %><br>
     <%= form.text_field :duration, value: @skill.duration %>
   </div>
